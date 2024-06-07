@@ -1,0 +1,7 @@
+php artisan serve
+php artisan websockets:serve
+npm run dev
+php artisan tinker --use garera ani 
+    event(new App\Events\MessageSent("your message"))
+Event xutai banauna paryo vane
+    php artisan make:event (eventname)
