@@ -21,7 +21,26 @@ createInertiaApp({
 });
 
 
-Echo.channel(`messenger`)
+Echo.private(`messenger`)
     .listen('MessageSent', (e) => {
         console.log(e.message);
+    });
+
+
+var roomId = 1;
+Echo.join(`group_chat.${roomId}`)
+    .here((users) => {
+        console.log(users)
+    })
+    .joining((user) => {
+        console.log(user.name);
+    })
+    .leaving((user) => {
+        console.log(user.name);
+    })
+    .listen('GroupChatMessage', (e) => {
+        console.log(e);
+    })
+    .error((error) => {
+        console.error(error);
     });
