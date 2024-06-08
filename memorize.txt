@@ -5,3 +5,41 @@ php artisan tinker --use garera ani
     event(new App\Events\MessageSent("your message"))
 Event xutai banauna paryo vane
     php artisan make:event (eventname)
+
+
+<div class="main-container overflow-hidden bg-slate-400 flex"><!-- non scrollable, left right 2:4 width height -->
+  <div class="left w-2/6 overflow-auto flex-col"><!-- contact segment, scrollable flex-column -->
+    <div class="search relative flex"><!-- flex relative absolute concept -->
+      <div class="search-input"><input type="text" placeholder="search"></div>
+      <div class="add-btn">
+        <button>S</button>
+      </div>
+    </div>
+    <div class="each-contact flex px-5 py-2"><!-- flex no margin with padding x,y content center ma vertical wise-->
+      <div class="pp-container">pp</div><!-- rounded within inner area -->
+      <div class="detailing-container flex-col"> <!-- flex column -->
+        <div class="name-field">Name</div><!-- big font size -->
+        <div class="last-msg overflow-hidden">message</div><!-- small font size non scrollable -->
+      </div>
+    </div>
+  </div>
+  <div class="right overflow-hidden w-4/6 flex-col"> <!-- messaging segment ,non scrollable-->
+    <div class="msg-view-header sticky top-0 justify-between flex"><!-- should be kept fixed on top all the time space between rakhna parxa-->
+      <div class="profiling flex align-middle justify-center">
+        <div class="pp">pp</div>
+        <div class="user-name">name</div>
+      </div><!-- flex row vertically center -->
+      <div class="multimedia flex-row">video call</div><!-- flex row -->
+    </div>
+    <div class="msg-content overflow-y-auto overflow-x-hidden top-33"><!-- scrollable part -->
+      <div class="received-msg bg-red-400">gf ko message</div><!-- left side ma stick hunu paryo positioning chainxa hola -->
+      <div class="sent-msg bg-blue-400">mero message</div><!-- right ma fix color different -->
+    </div>
+    <div class="input-field flex "><!-- flex row padding huna parxa -->
+      <div class="typing-field">
+        <input type="text" placeholder="Write a message">
+      </div>
+      <div class="voice-input flex">V</div><!-- flex row -->
+    </div>
+  </div>
+</div>
