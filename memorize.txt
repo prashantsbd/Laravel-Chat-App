@@ -11,7 +11,7 @@ Event xutai banauna paryo vane
 
 
 <div class="main-container overflow-hidden bg-white flex h-screen"><!-- non scrollable, left right 2:4 width height -->
-  <div class="left basis-2/6 pt-3 overflow-auto flex-col border-e-2"><!-- contact segment, scrollable flex-column -->
+  <div class="left basis-2/6 pt-3 overflow-x-hidden overflow-y-auto flex-col border-e-2"><!-- contact segment, scrollable flex-column -->
     <div class="search relative flex justify-between px-5 border-b border-slate-100 pb-4 h-10 text-slate-300"><!-- flex relative absolute concept -->
       <div class="search-input">
         <form action="">
@@ -23,8 +23,10 @@ Event xutai banauna paryo vane
         <button>S</button>
       </div>
     </div>
-    <div class="each-contact flex px-5 py-2"><!-- flex no margin with padding x,y content center ma vertical wise-->
-      <div class="pp-container">pp</div><!-- rounded within inner area -->
+    <div class="each-contact px-3 py-1 flex items-center bg-slate-200"><!-- flex no margin with padding x,y content center ma vertical wise-->
+      <div class="pp-container">
+        <img class="h-9 pe-3" src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="">
+      </div><!-- rounded within inner area -->
       <div class="detailing-container flex-col"> <!-- flex column -->
         <div class="name-field">Name</div><!-- big font size -->
         <div class="last-msg overflow-hidden">message</div><!-- small font size non scrollable -->
@@ -45,29 +47,25 @@ Event xutai banauna paryo vane
       </div><!-- flex row -->
     </div>
     <div class="msg-content overflow-y-auto overflow-x-hidden top-33 flex-col"><!-- scrollable part -->
-      <div class="received-msg relative flex-col justify-start">
-        <div class="Rmessage bg-red-400 rounded-sm max-w-[80%] my-2 px-2 py-1">
-          <p>
-            gf ko message Lorem ipsum dolor, sit amet consectetur adipisicing elit. At facere consectetur dolorem eaque est aliquid mollitia, corporis consequuntur esse illo quasi doloremque. Minus rem consectetur dicta. Minus ipsum reiciendis aspernatur.
-          </p>
-        </div>  
-        <div class="Rmessage bg-red-400 rounded-sm max-w-[80%] my-2 px-2 py-1">
-          <p>
-            gf ko message Lorem ipsum dolor, sit amet consectetur adipisicing elit. At facere consectetur dolorem eaque est aliquid mollitia, corporis consequuntur esse illo quasi doloremque. Minus rem consectetur dicta. Minus ipsum reiciendis aspernatur.
-          </p>
+      <div class="received-msg flex justify-start">
+        <div class="Rmsg-container max-w-[80%] rounded-md px-2 py-1 mt-2 bg-red-300">
+          <p>hello</p>
         </div>
-      </div><!-- left side ma stick hunu paryo positioning chainxa hola -->
-      <div class="sent-msg relative flex justify-end">
-        <div class="Smessage bg-blue-400 rounded-sm max-w-[80%] my-2 px-2 py-1">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde temporibus aliquam beatae nesciunt dolorum saepe libero consequuntur eos incidunt, voluptatum cupiditate non consequatur nemo exercitationem, doloribus est veniam blanditiis quae!</p>
-        </div>
-      </div><!-- right ma fix color different -->
-    </div>
-    <div class="input-field flex absolute bottom-0"><!-- flex row padding huna parxa -->
-      <div class="typing-field">
-        <input type="text" placeholder="Write a message">
       </div>
-      <div class="voice-input flex">V</div><!-- flex row -->
+      
+      <div class="sent-msg flex justify-end">
+        <div class="Rmsg-container max-w-[80%] rounded-md px-2 py-1 mt-2  bg-blue-400">
+          <p>hello</p>
+        </div>
+      </div>
+    </div>
+    <div class="w-full input-field flex absolute bottom-0 mt-2 mb-1"><!-- flex row padding huna parxa -->
+      <div class="typing-field w-[80%]">
+        <input class="w-full border-2 rounded-xl px-3" type="text" placeholder="Write a message">
+      </div>
+      <div class="voice-input ms-2">
+        <i class="fa fa-microphone"></i>
+      </div><!-- flex row -->
     </div>
   </div>
 </div>
