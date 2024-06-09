@@ -7,10 +7,18 @@ Event xutai banauna paryo vane
     php artisan make:event (eventname)
 
 
-<div class="main-container overflow-hidden bg-slate-400 flex"><!-- non scrollable, left right 2:4 width height -->
-  <div class="left w-2/6 overflow-auto flex-col"><!-- contact segment, scrollable flex-column -->
-    <div class="search relative flex"><!-- flex relative absolute concept -->
-      <div class="search-input"><input type="text" placeholder="search"></div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<div class="main-container overflow-hidden bg-white flex h-screen"><!-- non scrollable, left right 2:4 width height -->
+  <div class="left basis-2/6 pt-3 overflow-auto flex-col border-e-2"><!-- contact segment, scrollable flex-column -->
+    <div class="search relative flex justify-between px-5 border-b border-slate-100 pb-4 h-10 text-slate-300"><!-- flex relative absolute concept -->
+      <div class="search-input">
+        <form action="">
+          <i class="fa fa-search"></i>
+          <input type="search" class="font-light focus:outline-none" placeholder="Search">
+        </form>
+      </div>
       <div class="add-btn">
         <button>S</button>
       </div>
@@ -23,19 +31,39 @@ Event xutai banauna paryo vane
       </div>
     </div>
   </div>
-  <div class="right overflow-hidden w-4/6 flex-col"> <!-- messaging segment ,non scrollable-->
-    <div class="msg-view-header sticky top-0 justify-between flex"><!-- should be kept fixed on top all the time space between rakhna parxa-->
+  <div class="right overflow-hidden basis-4/6 flex-col relative px-4"> <!-- messaging segment ,non scrollable-->
+    <div class="msg-view-header sticky top-0 justify-between items-center flex py-2"><!-- should be kept fixed on top all the time space between rakhna parxa-->
       <div class="profiling flex align-middle justify-center">
-        <div class="pp">pp</div>
-        <div class="user-name">name</div>
+        <div class="pp">
+          <img class="h-9 pe-3" src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="">
+        </div>
+        <div class="user-name justify-center">name</div>
       </div><!-- flex row vertically center -->
-      <div class="multimedia flex-row">video call</div><!-- flex row -->
+      <div class="multimedia flex">
+        <i class="fa fa-video me-4"></i>
+        <i class="fa fa-phone"></i>
+      </div><!-- flex row -->
     </div>
-    <div class="msg-content overflow-y-auto overflow-x-hidden top-33"><!-- scrollable part -->
-      <div class="received-msg bg-red-400">gf ko message</div><!-- left side ma stick hunu paryo positioning chainxa hola -->
-      <div class="sent-msg bg-blue-400">mero message</div><!-- right ma fix color different -->
+    <div class="msg-content overflow-y-auto overflow-x-hidden top-33 flex-col"><!-- scrollable part -->
+      <div class="received-msg relative flex-col justify-start">
+        <div class="Rmessage bg-red-400 rounded-sm max-w-[80%] my-2 px-2 py-1">
+          <p>
+            gf ko message Lorem ipsum dolor, sit amet consectetur adipisicing elit. At facere consectetur dolorem eaque est aliquid mollitia, corporis consequuntur esse illo quasi doloremque. Minus rem consectetur dicta. Minus ipsum reiciendis aspernatur.
+          </p>
+        </div>  
+        <div class="Rmessage bg-red-400 rounded-sm max-w-[80%] my-2 px-2 py-1">
+          <p>
+            gf ko message Lorem ipsum dolor, sit amet consectetur adipisicing elit. At facere consectetur dolorem eaque est aliquid mollitia, corporis consequuntur esse illo quasi doloremque. Minus rem consectetur dicta. Minus ipsum reiciendis aspernatur.
+          </p>
+        </div>
+      </div><!-- left side ma stick hunu paryo positioning chainxa hola -->
+      <div class="sent-msg relative flex justify-end">
+        <div class="Smessage bg-blue-400 rounded-sm max-w-[80%] my-2 px-2 py-1">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde temporibus aliquam beatae nesciunt dolorum saepe libero consequuntur eos incidunt, voluptatum cupiditate non consequatur nemo exercitationem, doloribus est veniam blanditiis quae!</p>
+        </div>
+      </div><!-- right ma fix color different -->
     </div>
-    <div class="input-field flex "><!-- flex row padding huna parxa -->
+    <div class="input-field flex absolute bottom-0"><!-- flex row padding huna parxa -->
       <div class="typing-field">
         <input type="text" placeholder="Write a message">
       </div>
