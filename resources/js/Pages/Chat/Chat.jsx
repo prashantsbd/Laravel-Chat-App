@@ -5,10 +5,11 @@ import ChatUserInfoHeader from '@/Components/Chat/ChatUserInfoHeader';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
-export default function Chat({ auth }) {
+export default function Chat(props) {
+    console.log(props)
     return (
         <AuthenticatedLayout
-            user={auth.user}
+            user={props.auth.user}
         >
             <div>
                 <div className="main-container overflow-hidden bg-white flex h-screen">
