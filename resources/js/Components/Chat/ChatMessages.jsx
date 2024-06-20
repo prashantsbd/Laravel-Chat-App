@@ -1,19 +1,22 @@
-import React from 'react'
+import { Fragment } from "react"
 
-function ChatMessages({msg}) {
+function ChatMessages({ msg, auth_id }) {
+    const isReceivedMessage = (message) => {
+        return message.receiver_id === auth_id;
+    }
     return (
         <>
-            <div className="received-msg flex justify-start">
-                <div className="Rmsg-container max-w-[80%] rounded-md px-2 py-1 mt-2 bg-red-300">
-                    <p>{msg}</p>
-                </div>
-            </div>
-
-            <div className="sent-msg flex justify-end">
-                <div className="Rmsg-container max-w-[80%] rounded-md px-2 py-1 mt-2  bg-blue-400">
-                    <p>{msg}</p>
-                </div>
-            </div>
+            {
+                (msg || []).map((message, index) => (
+                    <Fragment key={index}>
+                        <div className={`${isReceivedMessage(message) ? 'received-msg justify-start' : 'sent-msg justify-end'} flex `}>
+                            <div className={`${isReceivedMessage(message) ? 'Rmsg-container bg-red-300' : 'Smsg-container bg-blue-400'} max-w-[80%] rounded-md px-2 py-1 mt-2`}>
+                                <p>{message?.message}</p>
+                            </div>
+                        </div>
+                    </Fragment>
+                ))
+            }
         </>
     )
 }

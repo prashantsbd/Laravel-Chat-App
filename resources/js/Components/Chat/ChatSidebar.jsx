@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react'
 import React from 'react'
 
 function ChatSidebar({ recentMessages }) {
@@ -16,7 +17,9 @@ function ChatSidebar({ recentMessages }) {
             </div>
             {
                 recentMessages.map((user, index) => (
-                    <div key={index} className="each-contact px-3 py-1 flex items-center transition hover:cursor-pointer hover:bg-slate-200">
+                    <Link 
+                        href={`/chat/${user.user_id}`}
+                    key={index} className="each-contact px-3 py-1 flex items-center transition hover:cursor-pointer hover:bg-slate-200">
                         <div className="pp-container">
                             <img className="h-9 pe-3" src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="" />
                         </div>
@@ -24,7 +27,7 @@ function ChatSidebar({ recentMessages }) {
                             <div className="name-field font-medium">{user.name.length > 0? user.name : "N/A "}</div>
                             <div className="last-msg overflow-hidden text-sm text-slate-600">{user.message}</div>
                         </div>
-                    </div>
+                    </Link>
                 ))
             }
         </>
