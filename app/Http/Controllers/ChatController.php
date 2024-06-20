@@ -21,6 +21,7 @@ class ChatController extends Controller
         $messages = empty($receiverId) ? [] : $this->chat->getUserMessages($request->user()->id, $receiverId);
         return Inertia::render('Chat/Chat', [
             'messages' => $messages,
+            'recentMessages' => $this->chat->getRecentUsersWithMessage($request->user()->id)
         ]);
     }
 

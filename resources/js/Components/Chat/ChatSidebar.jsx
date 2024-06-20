@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ChatSidebar() {
+function ChatSidebar({ recentMessages }) {
     return (
         <>
             <div className="search relative flex justify-between px-5 border-b border-slate-100 pb-4 h-10 text-slate-300">
@@ -14,15 +14,19 @@ function ChatSidebar() {
                     <button><i className="fa fa-address-book"></i></button>
                 </div>
             </div>
-            <div className="each-contact px-3 py-1 flex items-center transition hover:cursor-pointer hover:bg-slate-200">
-                <div className="pp-container">
-                    <img className="h-9 pe-3" src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="" />
-                </div>
-                <div className="detailing-container flex-col">
-                    <div className="name-field font-medium">Name</div>
-                    <div className="last-msg overflow-hidden text-sm text-slate-600">message</div>
-                </div>
-            </div>
+            {
+                recentMessages.map((user, index) => (
+                    <div key={index} className="each-contact px-3 py-1 flex items-center transition hover:cursor-pointer hover:bg-slate-200">
+                        <div className="pp-container">
+                            <img className="h-9 pe-3" src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="" />
+                        </div>
+                        <div className="detailing-container flex-col">
+                            <div className="name-field font-medium">{user.name.length > 0? user.name : "N/A "}</div>
+                            <div className="last-msg overflow-hidden text-sm text-slate-600">{user.message}</div>
+                        </div>
+                    </div>
+                ))
+            }
         </>
     )
 }

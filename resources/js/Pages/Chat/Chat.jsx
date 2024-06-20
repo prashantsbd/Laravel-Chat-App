@@ -14,16 +14,21 @@ export default function Chat(props) {
             <div>
                 <div className="main-container overflow-hidden bg-white flex h-screen">
                     <div className="left basis-2/6 pt-3 overflow-x-hidden overflow-y-auto flex-col border-e-2">
-                        <ChatSidebar />
+                        <ChatSidebar recentMessages={props.recentMessages}/>
                     </div>
                     <div className="right overflow-hidden basis-4/6 flex-col relative px-4">
-                        <ChatUserInfoHeader/>
+                        <div className="flex justify-center items-center bg-slate-100 h-screen">
+                            <p className='font-bold text-3xl text-gray-500'>
+                                Please select a user to start chatting...
+                            </p>
+                        </div>
+                        {/* <ChatUserInfoHeader/>
                         <div className="msg-content overflow-y-auto overflow-x-hidden top-33 flex-col">
                             <ChatMessages msg="hello" />
                         </div>
                         <div className="w-full input-field flex fixed bottom-0 mt-2 mb-1">
                             <ChatInput/>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
